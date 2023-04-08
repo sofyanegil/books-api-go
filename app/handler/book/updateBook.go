@@ -11,6 +11,16 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// UpdateBooks godoc
+// @Summary Update book identified by the given Id
+// @Description Update the book corresponding to the input bookID
+// @Tags books
+// @Accept json
+// @Produces json
+// @Param bookID path int true "bookID of the book to be updated"
+// @Param entity.Book body entity.Book true "update book"
+// @Success 200 {object} entity.Book
+// @Router /books/{bookID} [put]
 func UpdateBookHandler(ctx *gin.Context) {
 	bookID := ctx.Param("bookID")
 	var book entity.Book

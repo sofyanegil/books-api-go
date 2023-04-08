@@ -9,6 +9,15 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// DeleteBooks godoc
+// @Summary Delete book identified by the given bookID
+// @Description Delete the order corresponding to the input bookID
+// @Tags books
+// @Accept json
+// @Produces json
+// @Param bookID path int true "bookID of the book to be deleted"
+// @Success 204 "No Content"
+// @Router /books/{bookID} [delete]
 func DeleteBookHandler(ctx *gin.Context) {
 	bookID := ctx.Param("bookID")
 

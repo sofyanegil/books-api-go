@@ -1,0 +1,120 @@
+basePath: /
+definitions:
+  entity.Book:
+    properties:
+      author:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: integer
+      name_book:
+        type: string
+      updated_at:
+        type: string
+    type: object
+host: localhost:3000
+info:
+  contact:
+    email: sofyanegil@gmail.com
+    name: API Support
+  description: This is a sample service for managing books
+  license:
+    name: Apache 2.0
+  title: Book API
+  version: "1.0"
+paths:
+  /books:
+    get:
+      consumes:
+      - application/json
+      description: Get details of all book
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entity.Book'
+      summary: Get details
+      tags:
+      - books
+    post:
+      consumes:
+      - application/json
+      description: Post details of book corresponding to the input bookID
+      parameters:
+      - description: create book
+        in: body
+        name: entity.Book
+        required: true
+        schema:
+          $ref: '#/definitions/entity.Book'
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entity.Book'
+      summary: Post details for a given Id
+      tags:
+      - books
+  /books/{bookID}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete the order corresponding to the input bookID
+      parameters:
+      - description: bookID of the book to be deleted
+        in: path
+        name: bookID
+        required: true
+        type: integer
+      responses:
+        "204":
+          description: No Content
+      summary: Delete book identified by the given bookID
+      tags:
+      - books
+    get:
+      consumes:
+      - application/json
+      description: Get details of book corresponding to the input bookID
+      parameters:
+      - description: ID of the book
+        in: path
+        name: bookID
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entity.Book'
+      summary: Get details for a given Id
+      tags:
+      - books
+    put:
+      consumes:
+      - application/json
+      description: Update the book corresponding to the input bookID
+      parameters:
+      - description: bookID of the book to be updated
+        in: path
+        name: bookID
+        required: true
+        type: integer
+      - description: update book
+        in: body
+        name: entity.Book
+        required: true
+        schema:
+          $ref: '#/definitions/entity.Book'
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entity.Book'
+      summary: Update book identified by the given Id
+      tags:
+      - books
+swagger: "2.0"

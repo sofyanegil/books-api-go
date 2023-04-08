@@ -10,6 +10,15 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// CreateBooks godoc
+// @Summary Post details for a given Id
+// @Description Post details of book corresponding to the input bookID
+// @Tags books
+// @Accept json
+// @Produces json
+// @Param entity.Book body entity.Book true "create book"
+// @Success 200 {object} entity.Book
+// @Router /books [post]
 func CreateBookHandler(ctx *gin.Context) {
 	var book entity.Book
 

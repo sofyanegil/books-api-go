@@ -7,6 +7,7 @@ import (
 	"gorm.io/gorm"
 )
 
+// Book represents the model for an book
 type Book struct {
 	ID        uint      `gorm:"primaryKey" json:"id"`
 	Title     string    `gorm:"not null;type:varchar(200)" json:"name_book"`
