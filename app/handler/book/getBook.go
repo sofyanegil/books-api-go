@@ -10,6 +10,15 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// GetOneBooks godoc
+// @Summary Get details for a given Id
+// @Description Get details of book corresponding to the input bookID
+// @Tags books
+// @Accept json
+// @Produces json
+// @Param bookID path int true "ID of the book"
+// @Success 200 {object} entity.Book
+// @Router /books/{bookID} [get]
 func GetBookByIdHandler(ctx *gin.Context) {
 	bookID := ctx.Param("bookID")
 	var book entity.Book

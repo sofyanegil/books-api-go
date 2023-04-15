@@ -9,6 +9,14 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// GetAllBooks godoc
+// @Summary Get details
+// @Description Get details of all book
+// @Tags books
+// @Accept json
+// @Produce json
+// @Success 200 {object} entity.Book
+// @Router /books [get]
 func GetAllBookHandler(ctx *gin.Context) {
 	var books []entity.Book
 
